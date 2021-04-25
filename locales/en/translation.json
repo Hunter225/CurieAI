@@ -1,0 +1,28 @@
+{
+  "general": {
+    "under-construction": "This page is under construction.",
+    "download-template": "Download Template",
+    "download-result": "Download Result",
+    "upload-data": "Upload Data",
+    "start": "Start",
+    "loading": "Loading...",
+    "submit": "submit"
+  },
+  "intro": {
+    "part1": "Hi, may name is Curie, a light weight Artificial Intelligence",
+    "part2": "I can help you..."
+  },
+  "classification": {
+    "hints": "Hints: Keep the class or label (aka: Y_train) in the last column. Those rows with empty class or label will be regarded as instances to be classified."
+  },
+  "clustering": {
+    "hints": "Hints: All columns will be used as attributes for clustering",
+    "num-of-clus": "Number of cluster:"
+  },
+  "mission": {
+    "classification": "classifying data",
+    "clustering": "clustering data",
+    "regression": "fitting regression",
+    "dimensionality-reduciton": "reducing dimension"
+  }
+}
