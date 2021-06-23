@@ -1,6 +1,5 @@
 {
   "name": "curie",
-  "homepage": "https://hunter225.github.io/CurieAI/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
