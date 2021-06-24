@@ -1,7 +1,6 @@
 import React from 'react';
 import { FadeInText } from '../../components/FadeInText';
 import { FadeInPageLink } from '../../components/FadeInPageLink';
-import './Root.css';
 import { DelayRender } from '../../utils/delayRenderer';
 import { Classification } from '../Classification/Classification';
 import { Clustering } from '../Clustering/Clustering';

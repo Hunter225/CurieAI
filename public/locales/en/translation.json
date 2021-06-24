@@ -13,6 +13,8 @@
     "part2": "I can help you..."
   },
   "classification": {
+    "title": "Classification",
+    "intro": "Classification is the process of predicting the class of given data points. Classes are sometimes called as targets/ labels or categories. Classification predictive modeling is the task of approximating a mapping function (f) from input variables (X) to discrete output variables (y).",
     "hints": "Hints: Keep the class or label (aka: Y_train) in the last column. Those rows with empty class or label will be regarded as instances to be classified."
   },
   "clustering": {

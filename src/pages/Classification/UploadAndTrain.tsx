@@ -12,7 +12,8 @@ const useStyles = makeStyles({
   card: {
     backgroundColor: '#34383f',
     color: 'white',
-    fontSize: 'calc(8px + 2hmin + 1vmin)'
+    textAlign: 'center',
+    fontSize: '16px'
   },
   cardContent: {
     backgroundColor: '#34383f',
@@ -20,6 +21,11 @@ const useStyles = makeStyles({
   },
   button: {
     backgroundColor: '#34383f',
+    color: 'white',
+    textDecoration: 'none'
+  },
+  downloadResultButton: {
+    backgroundColor: '#306E30',
     color: 'white',
     textDecoration: 'none'
   },
@@ -137,7 +143,7 @@ export const UploadAndTrain = () => {
       <Button
         href={'data:text/csv;charset=utf-8,' + encodeURI(resultCsv)}
         download='result.csv'
-        className={classes.button}
+        className={classes.downloadResultButton}
       >
         {t('general.download-result')}
       </Button>

@@ -1,43 +1,72 @@
 import React from 'react';
-import './Classification.css';
-import { Grid } from '@material-ui/core';
 import { DownloadButton } from '../../components/DownloadButton';
 import { UploadAndTrain } from './UploadAndTrain';
 import { useTranslation } from 'react-i18next';
-import { Typography } from '@material-ui/core';
-import { EmptyRow } from '../../components/EmptyRow';
+
+import styled from 'styled-components';
+
+const ClassificationPageWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  background-color: #282c34;
+  color: white;
+`;
+const ItemsWrapper = styled.div`
+  margin: 100px 50px 0 50px;
+  display: flex;
+  flex-direction: column;
+`;
+const Title = styled.div`
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  margin-bottom: 20px;
+  text-decoration: underline;
+`;
+const TextWrapper = styled.div`
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  margin: 0 20px 20px 20px;
+  font-size: 20px;
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 0 20px 0;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  margin: 20px 20px 20px 20px;
+`;
 
 export const Classification = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className='Classification'>
-      <Grid id='top-row' container spacing={5}>
-        <Grid item xs={3}></Grid>
+    <ClassificationPageWrapper>
+      <ItemsWrapper>
+        <Title>{t('classification.title')}</Title>
+        <TextWrapper>{t('classification.intro')}</TextWrapper>
+        <TextWrapper>{t('classification.hints')}</TextWrapper>
 
-        <Grid item xs={6}>
-          <Typography>{t('classification.hints')}</Typography>
-        </Grid>
-
-        <Grid item xs={3}></Grid>
-      </Grid>
-
-      <EmptyRow marginFix={0} marginReponsive={5}></EmptyRow>
-
-      <Grid id='second-row' container spacing={5}>
-        <Grid item xs={3}></Grid>
-        <Grid item xs={3}>
-          <DownloadButton
-            i18nKey='general.download-template'
-            filePath='/templates/classification/training_data_template.csv'
-            fileName='training_data_template.csv'
-          ></DownloadButton>
-        </Grid>
-        <Grid item xs={3}>
-          <UploadAndTrain />
-        </Grid>
-        <Grid item xs={3}></Grid>
-      </Grid>
-    </div>
+        <ButtonsWrapper>
+          <ButtonWrapper>
+            <DownloadButton
+              i18nKey='general.download-template'
+              filePath='/templates/classification/training_data_template.csv'
+              fileName='training_data_template.csv'
+            ></DownloadButton>
+          </ButtonWrapper>
+          <ButtonWrapper>
+            <UploadAndTrain />
+          </ButtonWrapper>
+        </ButtonsWrapper>
+      </ItemsWrapper>
+    </ClassificationPageWrapper>
   );
 };
