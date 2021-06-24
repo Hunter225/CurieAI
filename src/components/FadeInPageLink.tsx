@@ -16,18 +16,20 @@ interface FadeInPageLinkInterface {
 const useStyles = makeStyles({
   card: {
     backgroundColor: '#34383f',
-    color: 'white'
+    color: 'white',
+    padding: '10px, 10px, 10px, 10px'
   },
   cardContent: {
     backgroundColor: '#34383f',
-    color: 'white'
+    color: 'white',
+    textAlign: 'center'
   },
   link: {
     backgroundColor: '#34383f',
     color: 'white',
     textTransform: 'none',
     textDecoration: 'none',
-    fontSize: 'calc(8px + 2vmin)'
+    fontSize: '16px'
   }
 });
 

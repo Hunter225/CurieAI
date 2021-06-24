@@ -1,31 +1,106 @@
 import React from 'react';
 import { FadeInText } from '../../components/FadeInText';
-import { EmptyRow } from '../../components/EmptyRow';
 import { FadeInPageLink } from '../../components/FadeInPageLink';
 import './Root.css';
 import { DelayRender } from '../../utils/delayRenderer';
-import { Grid } from '@material-ui/core';
 import { Classification } from '../Classification/Classification';
 import { Clustering } from '../Clustering/Clustering';
 import { Regression } from '../Regression/Regression';
 import { DimenReduc } from '../DimenReduc/DimenReduc';
 import { Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
+
+const RootPageWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  background-color: #282c34;
+  color: white;
+`;
+
+const ItemsWrapper = styled.div`
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const FadeInTextWrapper = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 0 0 20px 0;
+`;
+
+const PageLinksWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 0 20px 0;
+`;
+
+const PageLinkWrapper = styled.div`
+  display: flex;
+  margin: 20px 20px 20px 20px;
+`;
 
 const _Root = () => {
   return (
-    <div className='Root'>
-      <Grid id='top-row' container spacing={5}>
-        <Grid item xs={12}>
+    <RootPageWrapper>
+      <ItemsWrapper>
+        <FadeInTextWrapper>
           <FadeInText
             i18nKey='intro.part1'
             canFadeIn={true}
             transitionTime={3000}
           ></FadeInText>
-        </Grid>
-      </Grid>
+        </FadeInTextWrapper>
+        <FadeInTextWrapper>
+          <DelayRender
+            children={
+              <FadeInText
+                i18nKey='intro.part2'
+                canFadeIn={true}
+                transitionTime={2000}
+              ></FadeInText>
+            }
+            delayTime={2000}
+          ></DelayRender>
+        </FadeInTextWrapper>
+        <PageLinksWrapper>
+          <PageLinkWrapper>
+            {' '}
+            <DelayRender
+              children={
+                <FadeInPageLink
+                  i18nKey='mission.classification'
+                  canFadeIn={true}
+                  path='/classification'
+                  hook={<Classification></Classification>}
+                  transitionTime={3000}
+                ></FadeInPageLink>
+              }
+              delayTime={3500}
+            ></DelayRender>
+          </PageLinkWrapper>
+          <PageLinkWrapper>
+            {' '}
+            <DelayRender
+              children={
+                <FadeInPageLink
+                  i18nKey='mission.clustering'
+                  canFadeIn={true}
+                  path='/clustering'
+                  hook={<Clustering />}
+                  transitionTime={3000}
+                ></FadeInPageLink>
+              }
+              delayTime={5000}
+            ></DelayRender>
+          </PageLinkWrapper>
+        </PageLinksWrapper>
+      </ItemsWrapper>
 
-      <EmptyRow marginFix={0} marginReponsive={5}></EmptyRow>
-
+      {/*
       <Grid id='second-row' container spacing={5}>
         <Grid item xs={12}>
           <DelayRender
@@ -40,8 +115,6 @@ const _Root = () => {
           ></DelayRender>
         </Grid>
       </Grid>
-
-      <EmptyRow marginFix={0} marginReponsive={5}></EmptyRow>
 
       <Grid id='third-row' container spacing={5}>
         <Grid item xs={3}></Grid>
@@ -74,9 +147,7 @@ const _Root = () => {
           ></DelayRender>
         </Grid>
       </Grid>
-      <Grid item xs={3}></Grid>
-
-      <EmptyRow marginFix={0} marginReponsive={5}></EmptyRow>
+      <Grid item xs={3}></Grid> */}
 
       {/* <Grid id='fourth-row' container spacing={5}>
         <Grid item xs={3}></Grid>
@@ -109,8 +180,7 @@ const _Root = () => {
           ></DelayRender>
         </Grid>
       </Grid> */}
-      <Grid item xs={3}></Grid>
-    </div>
+    </RootPageWrapper>
   );
 };
 
